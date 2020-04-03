@@ -2,7 +2,7 @@
   <v-app-bar app>
 
     <div class="d-flex align-center">
-      <span class="mr-2 display-1 primary--text">Yachter</span>
+      <span class="ml-6 display-1 primary--text">Yachter</span>
     </div>
 
     <v-spacer></v-spacer>
@@ -22,6 +22,7 @@
     </v-btn>
 
     <v-btn
+      class="mr-8"
       href="https://github.com/vuetifyjs/vuetify/releases/latest"
       text
     >

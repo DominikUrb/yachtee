@@ -28,7 +28,7 @@
       </v-card-title>
       
       <v-card-title class="secondary">
-        <div class="ml-6 d-flex align-center">
+        <div class="ml-8 d-flex align-center">
           <v-list class="secondary font-weight-light">
             <v-list-item>
               <span>O nas</span>
