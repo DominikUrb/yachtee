@@ -2,6 +2,7 @@
   <v-footer
     padless
     app
+    absolute
   >
     <v-card
       class="flex"
