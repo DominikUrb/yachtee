@@ -1,14 +1,13 @@
 <template>
-  <v-footer
-    padless
-    app
-    absolute
+  <v-bottom-navigation
+      app
+      hide-on-scroll
+      scroll-threshold="1"
+      horizontal
+      fixed
+      height="300px"
   >
-    <v-card
-      class="flex"
-      flat
-      tile
-    >
+    <v-container fluid>
       <v-card-title class="secondary">
         <div class="d-flex align-center">
           <router-link
@@ -19,7 +18,7 @@
             Yachter
           </router-link>
         </div>
-
+  
         <v-spacer></v-spacer>
         
         <div class="mt-8 mr-8">
@@ -51,7 +50,7 @@
             </v-list-item>
           </v-list>
         </div>
-
+  
         <v-spacer></v-spacer>
         
         <div class="mr-12 d-flex align-center">
@@ -69,13 +68,12 @@
         </div>
         
       </v-card-title>
-      
-
+  
       <v-card-text class="py-2 text-center secondary">
         {{ new Date().getFullYear() }} — <strong>Yachter</strong>
       </v-card-text>
-    </v-card>
-  </v-footer>
+    </v-container>
+  </v-bottom-navigation>
 </template>
 
 <script>

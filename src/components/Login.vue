@@ -72,7 +72,23 @@
 						lazy-validation
 					>
 						<v-text-field
-							v-model="email"
+							v-model="userData.name"
+							label="Imię"
+							required
+							outlined
+							class="my-3"
+							dense
+						></v-text-field>
+						<v-text-field
+							v-model="userData.surname"
+							label="Nazwisko"
+							required
+							outlined
+							class="my-3"
+							dense
+						></v-text-field>
+						<v-text-field
+							v-model="userData.email"
 							:rules="emailRules"
 							label="E-mail"
 							required
@@ -81,46 +97,16 @@
 							dense
 						></v-text-field>
 						<v-text-field
-							v-model="password"
-							label="Hasło"
-							required
+							v-model="userData.password"
+							:append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+							:rules="[passwordRules.required, passwordRules.min]"
+							:type="show1 ? 'text' : 'password'"
+							hint="Hasło musi składać się z przynajmniej ośmiu znaków"
+							counter
+							@click:append="show1 = !show1"
 							outlined
-							class="my-3"
 							dense
-						></v-text-field>
-						<v-text-field
-							v-model="email"
-							:rules="emailRules"
-							label="E-mail"
-							required
-							outlined
 							class="my-3"
-							dense
-						></v-text-field>
-						<v-text-field
-							v-model="password"
-							label="Hasło"
-							required
-							outlined
-							class="my-3"
-							dense
-						></v-text-field>
-						<v-text-field
-							v-model="email"
-							:rules="emailRules"
-							label="E-mail"
-							required
-							outlined
-							class="my-3"
-							dense
-						></v-text-field>
-						<v-text-field
-							v-model="password"
-							label="Hasło"
-							required
-							outlined
-							class="my-3"
-							dense
 						></v-text-field>
 						<v-btn
 							color="primary"
@@ -128,7 +114,7 @@
 							style="width: 100%; height: 40px"
 						>
 							Zarejestruj się
-						</v-btn>
+						</v-btn><br><br><br>
 					</v-form>
 				</v-container>
 				
@@ -143,15 +129,27 @@
 	export default {
 		name: "Login",
 		data: () => ({
+			show1: false,
+      show2: true,
+      show3: false,
+      show4: false,
+			remindPasswordUrl: '/',
 			login: true,
 			valid: true,
-			email: '',
-			password: '',
-			remindPasswordUrl: '/',
+			userData: {
+				name: '',
+				surname: '',
+				email: '',
+				password: ''
+			},
 			emailRules: [
 				v => !!v || 'Adres e-mail jest wymagany',
 				v => /.+@.+\..+/.test(v) || 'Adres e-mail jest niepoprawny',
 			],
+      passwordRules: {
+        required: value => !!value || 'To pole jest wymagane.',
+        min: v => v.length >= 8 || 'Hasło musi składać się z przynajmniej ośmiu znaków',
+        },
 			}),
 			methods: {
 				validate () {
