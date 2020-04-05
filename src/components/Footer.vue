@@ -10,8 +10,14 @@
       tile
     >
       <v-card-title class="secondary">
-        <div class="ml-8 d-flex align-center">
-          <span class="display-1 primary--text">Yachter</span>
+        <div class="d-flex align-center">
+          <router-link
+            to="/"
+            class="ml-6 display-1 primary--text"
+            style="text-decoration: none"
+          >
+            Yachter
+          </router-link>
         </div>
 
         <v-spacer></v-spacer>

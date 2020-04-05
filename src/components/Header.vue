@@ -1,8 +1,16 @@
 <template>
-  <v-app-bar app hide-on-scroll>
-
+  <v-app-bar
+    app
+    hide-on-scroll
+  >
     <div class="d-flex align-center">
-      <span class="ml-6 display-1 primary--text">Yachter</span>
+      <router-link
+        to="/"
+        class="ml-6 display-1 primary--text"
+        style="text-decoration: none"
+      >
+        Yachter
+      </router-link>
     </div>
 
     <v-spacer></v-spacer>
@@ -49,7 +57,19 @@
             class="primary--text"
             v-if="i===0"
           >
-            <v-btn small color="primary" style="width: 100%; height: 40px">{{ item.title }}</v-btn>
+            <v-btn
+              small
+              color="primary"
+              style="width: 100%; height: 40px"
+            >
+              <router-link
+                v-bind:to="item.url"
+                class="white--text"
+                style="text-decoration: none"
+              >
+                {{ item.title }}
+              </router-link>
+            </v-btn>
           </v-list-item-title>
           
           <v-list-item-title
@@ -72,7 +92,7 @@
         data: () => ({
           counter: 0,
           items: [
-            { title: 'Zaloguj' },
+            { title: 'Zaloguj', url: '/login'},
             { title: 'Dodaj jacht' },
           ],
       }),
