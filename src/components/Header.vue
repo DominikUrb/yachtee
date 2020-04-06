@@ -1,6 +1,5 @@
 <template>
   <v-app-bar
-    app
     hide-on-scroll
   >
     <div class="d-flex align-center">

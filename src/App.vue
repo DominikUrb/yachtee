@@ -1,13 +1,16 @@
 <template>
   <v-app>
-    <Header></Header>
-    <MainPageFilters></MainPageFilters>
-    <v-content>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
+    <v-content app>
+      <Header></Header>
     </v-content>
-    <Footer></Footer>
+    
+    <v-content app style="height: 100%">
+      <router-view></router-view>
+    </v-content>
+    
+    <v-content app>
+      <Footer></Footer>
+    </v-content>
   </v-app>
 </template>
 
