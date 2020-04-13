@@ -32,7 +32,6 @@
     
     <v-menu
       min-width="115px"
-      offset-y="offset"
     >
       <template v-slot:activator="{ on }">
         <v-btn
